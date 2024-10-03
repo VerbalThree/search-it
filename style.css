@@ -1,0 +1,52 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container for textarea and icon */
+.search-container {
+    position: relative;
+    max-width: 584px;
+    width: 100%;
+}
+
+/* Text Area */
+#search-bar {
+    padding-left: 40px;
+    margin: auto;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    width: 100%;
+    min-height: 44px;
+    max-width: 584px;
+    width: 500px;
+    resize: none;
+    line-height: 44px;
+    font-size: 16px;
+    overflow-y: auto;
+}
+
+/* Icon inside the Search Bar */
+.search-container i {
+    position: absolute;
+    pointer-events: none; /* Doesn't interfere with the UX */
+    top: 48%;
+    font-size: 18px;
+    transform: translateY(-50%);
+    left: 15px;
+}
+
+/* Button for search */
+#search-button {
+    margin-top: 10px;
+}
