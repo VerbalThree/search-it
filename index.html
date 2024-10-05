@@ -13,14 +13,18 @@
 </head>
 <body>
     
-    <div class="user">
-        <div class="search-container">
-            <i class="fas fa-search"></i>
-            <textarea id="search-bar" placeholder="Enter here what you want to search!" rows="1" oninput="autoResize(this)"></textarea>
+    <form action="/search" autocomplete="off" method="GET" role="search"
+        <div class="user">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <textarea id="search-bar" placeholder="Search..." rows="1" oninput="autoResize(this)"></textarea>
+            </div>
+                <button type="submit" id="search-button">Search It!</button>
+            </div>
         </div>
-        <button type="submit" id="search-button">Search It!</button>
-    </div>
+    </form>
 
+    
     <script src="app.js"></script>
 </body>
 </html>
