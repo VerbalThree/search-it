@@ -1,5 +1,5 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 import { createI18n } from 'vue-i18n';
 
 // Messages of translation to another supported languages
@@ -10,8 +10,20 @@ const messages = {
     },
     pt: {
         search: "Pesquisar...",
-        searchButton: "Pesquisar Agora!"
-    }
+        searchButton: "Pesquisar Isso!"
+    },
+    es: {
+        search: "Buscar...",
+        searchButton: "¡Buscar Esto!"
+    },
+    fr: {
+        search: "Rechercher...",
+        searchButton: "Rechercher Ça!"
+    },
+    jp: {
+        search: "検索中...",
+        searchButton: "これを検索！"
+    },
 };
 
 // Instatiating the i18n
