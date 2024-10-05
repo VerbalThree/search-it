@@ -67,6 +67,7 @@ body, html {
     max-width: 584px;
     width: 100%;
     border-radius: 24px;
+    margin-top: 20%;
 }
 
 /* Shadow when the user mouse hover the search bar */
@@ -124,11 +125,22 @@ body, html {
     color: white;
   }
 
+/* Removing the highlight for textarea */
+textarea {
+  outline: none;
+}
+
 /* Language Selector */
 select {
   margin-bottom: 20px;
   padding: 5px;
   border-radius: 8px;
   font-size: 14px;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>

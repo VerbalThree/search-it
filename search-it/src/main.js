@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createI18n } from 'vue-i18n';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 // Messages of translation to another supported languages
 const messages = {
