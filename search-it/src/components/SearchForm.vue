@@ -17,6 +17,11 @@
     <a href="https://github.com/VerbalThree" style="padding: 5px; font-size: 12px;">2024 VerbalThree</a>
   </nav>
 
+<!-- Dark Mode control -->
+  <div class="{ 'dark-mode': isDarkMode }">
+    <button @click="toggleDarkMode">{{  isDarkMode ? 'Light Mode' : 'Dark Mode' }}</button>
+  </div>
+
 <!-- Search Form --> 
     <form action="/search" autocomplete="off" method="GET" role="search">
         <div class="user">
