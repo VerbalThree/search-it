@@ -1,6 +1,7 @@
 <template>
 
-<div>
+<!-- Dark Mode control -->
+<div :class="{ 'dark-mode': isDarkMode }">
   
 <!--  Language selector -->
   <select @change="changeLanguage($event)">
@@ -17,10 +18,7 @@
     <a href="https://github.com/VerbalThree" style="padding: 5px; font-size: 12px;">2024 VerbalThree</a>
   </nav>
 
-<!-- Dark Mode control -->
-  <div class="{ 'dark-mode': isDarkMode }">
     <button @click="toggleDarkMode">{{  isDarkMode ? 'Light Mode' : 'Dark Mode' }}</button>
-  </div>
 
 <!-- Search Form --> 
     <form action="/search" autocomplete="off" method="GET" role="search">
@@ -33,6 +31,7 @@
         </div>
     </form>
 
+  
 </div>
 
 </template>
@@ -42,7 +41,8 @@
 export default {
   data() {
     return {
-      userOS: this.detectOS() // Detect the Operating System
+      userOS: this.detectOS(), // Detect the Operating System
+      isDarkMode: false, // Dark Mode is false by default
     };
   },
 
@@ -107,8 +107,18 @@ export default {
         }
 
         return `${os} ${version} ${architecture}`;
-    }
-  }
+    },
+    toggleDarkMode() {
+        this.isDarkMode = !this.isDarkMode;
+        localStorage.setItem('darkMode', this.isDarkMode); // Save on localstorage for user's preference
+    },
+  },
+    created() {
+      const savedPreference = localStorage.getItem('darkMode');
+      if (savedPreference !== null) {
+        this.isDarkMode = savedPreference === 'true'; // Loads the preference
+      }
+    },
 };
 
 </script>
