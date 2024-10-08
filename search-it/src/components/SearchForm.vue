@@ -21,11 +21,11 @@
     <button style="left: 25px; position: fixed; top: 6%;" @click="toggleDarkMode">{{  isDarkMode ? 'Light Mode' : 'Dark Mode' }}</button>
 
 <!-- Search Form --> 
-    <form action="/search" autocomplete="off" method="GET" role="search">
+    <form action="https://www.google.com/search" autocomplete="off" method="GET" role="search">
         <div class="user">
             <div class="search-container">
                 <i class="fas fa-search"></i>
-                <textarea id="search-bar" :placeholder="$t('search')" rows="1" @input="autoResize"></textarea>
+                <textarea id="search-bar" name="q" :placeholder="$t('search')" rows="1" @input="autoResize"></textarea>
             </div>
             <button type="submit" id="search-button">{{ $t('searchButton') }}</button>
         </div>
