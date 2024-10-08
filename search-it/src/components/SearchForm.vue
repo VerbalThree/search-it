@@ -12,7 +12,10 @@
   </select>
 
 <!-- Operating System -->
-  <p class="OS" v-html="$t('userOS', { os: $t('os', { os: userOS}) })"></p>
+  <nav>
+    <p class="OS" v-html="$t('userOS', { os: $t('os', { os: userOS}) })"></p>
+    <p style="padding: 5px; font-size: 12px;">Bloco de Código</p>
+  </nav>
 
 <!-- Search Form --> 
     <form action="/search" autocomplete="off" method="GET" role="search">
@@ -211,4 +214,14 @@ select {
   font-size: 12px;
 }
 
+/* navbar */
+nav {
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: 500;
+  top: 0px;
+  display: flex;
+  width: 98%;
+  position: fixed;
+}
 </style>
