@@ -18,7 +18,7 @@
     <a href="https://github.com/VerbalThree" style="padding: 5px; font-size: 16px;">2024 VerbalThree</a>
   </nav>
 
-    <button @click="toggleDarkMode">{{  isDarkMode ? 'Light Mode' : 'Dark Mode' }}</button>
+    <button style="left: 25px; position: fixed; top: 6%;" @click="toggleDarkMode">{{  isDarkMode ? 'Light Mode' : 'Dark Mode' }}</button>
 
 <!-- Search Form --> 
     <form action="/search" autocomplete="off" method="GET" role="search">
@@ -33,7 +33,6 @@
 
   
 </div>
-
 </template>
 
 <script>
@@ -123,7 +122,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
 
 body, html {
     margin: 0;
@@ -239,6 +238,7 @@ nav {
   display: flex;
   width: 98%;
   position: fixed;
+  left: 0.5%;
 }
 
 /* Links for the Github profile */
@@ -256,24 +256,16 @@ a:hover {
 
 /* Styling for darkmode */
 .dark-mode{
-  background-color: #121212;
+  background-color: black;
   color: white;
 }
 
 .dark-mode nav {
-  background-color: #1e1e1e;
+    background-color: black;
+    color: white;
 }
 
-.dark-mode a {
-  color: white;
-}
-
-.dark-mode #search-button {
-  background-color: #333;
-  border-color: #444;
-}
-
-.dark-mode #search-button:hover {
-  background-color: #555;
+.dark-mode a{
+    color: white;
 }
 </style>
