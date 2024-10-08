@@ -15,7 +15,7 @@
 <!-- Operating System -->
   <nav>
     <p class="OS" v-html="$t('userOS', { os: $t('os', { os: userOS}) })"></p>
-    <a href="https://github.com/VerbalThree" style="padding: 5px; font-size: 12px;">2024 VerbalThree</a>
+    <a href="https://github.com/VerbalThree" style="padding: 5px; font-size: 16px;">2024 VerbalThree</a>
   </nav>
 
     <button @click="toggleDarkMode">{{  isDarkMode ? 'Light Mode' : 'Dark Mode' }}</button>
@@ -227,7 +227,7 @@ select {
 /* Operating System paragraph */
 .OS {
   padding: 5px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 /* navbar */
