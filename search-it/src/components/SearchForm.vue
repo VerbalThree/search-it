@@ -204,4 +204,11 @@ select {
   left: 50%;
   transform: translateX(-50%);
 }
+
+/* Operating System paragraph */
+.OS {
+  padding: 5px;
+  font-size: 12px;
+}
+
 </style>
