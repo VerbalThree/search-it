@@ -14,7 +14,7 @@
 <!-- Operating System -->
   <nav>
     <p class="OS" v-html="$t('userOS', { os: $t('os', { os: userOS}) })"></p>
-    <p style="padding: 5px; font-size: 12px;">2024 VerbalThree</p>
+    <a href="https://github.com/VerbalThree" style="padding: 5px; font-size: 12px;">2024 VerbalThree</a>
   </nav>
 
 <!-- Search Form --> 
@@ -223,5 +223,18 @@ nav {
   display: flex;
   width: 98%;
   position: fixed;
+}
+
+/* Links for the Github profile */
+a {
+  text-decoration: none;
+  color: black;
+  border: 10px solid transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+}
+
+a:hover {
+  background-color: #dfd4d4;
 }
 </style>
