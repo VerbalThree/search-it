@@ -11,6 +11,7 @@
     <option value="jp">日本語</option>
   </select>
 
+  <p>Operating System: {{  userOS }}</p>
 <!-- Search Form --> 
     <form action="/search" autocomplete="off" method="GET" role="search">
         <div class="user">
@@ -29,17 +30,34 @@
 <script>
 
 export default {
-    methods: {
+  data() {
+    return {
+      userOS: this.detectOS() // Detect the Operating System
+    };
+  },
 
+  methods: {
       // AutoResize
-        autoResize(event) {
-            event.target.style.height = "auto";
-            event.target.style.height = `${event.target.scrollHeight}px`;
-        },
-        changeLanguage(event) {
-          this.$i18n.locale = event.target.value; // Changing the language
-        }
+    autoResize(event) {
+      event.target.style.height = "auto";
+      event.target.style.height = `${event.target.scrollHeight}px`;
+    },
+    changeLanguage(event) {
+      this.$i18n.locale = event.target.value; // Changing the language
+    },
+    detectOS() {
+        const userAgent = window.navigator.userAgent;
+        let os = "Unknown OS";
+
+        if (userAgent.indexOf("Win") !== -1) os = "Windows";
+        if (userAgent.indexOf("Mac") !== -1) os = "macOS";
+        if (userAgent.indexOf("X11") !== -1 || userAgent.indexOf("Linux") !== -1) os = "Linux";
+        if (userAgent.indexOf("Android") !== -1) os = "Android";
+        if (userAgent.indexOf("like Mac") !== -1) os = "iOS";
+          
+        return os;
     }
+  }
 };
 
 </script>
