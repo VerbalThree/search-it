@@ -11,7 +11,9 @@
     <option value="jp">日本語</option>
   </select>
 
-  <p>{{  userOS }}</p>
+<!-- Operating System -->
+  <p>{{ $t('userOS', { os: userOS }) }}</p>
+
 <!-- Search Form --> 
     <form action="/search" autocomplete="off" method="GET" role="search">
         <div class="user">
@@ -96,7 +98,7 @@ export default {
           }
         }
 
-        return `O seu sistema operacional é: ${os} ${version} ${architecture}`;
+        return `${os} ${version} ${architecture}`;
     }
   }
 };
