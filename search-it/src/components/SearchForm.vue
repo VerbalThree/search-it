@@ -238,4 +238,27 @@ a {
 a:hover {
   background-color: #dfd4d4;
 }
+
+/* Styling for darkmode */
+.dark-mode{
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode nav {
+  background-color: #1e1e1e;
+}
+
+.dark-mode a {
+  color: white;
+}
+
+.dark-mode #search-button {
+  background-color: #333;
+  border-color: #444;
+}
+
+.dark-mode #search-button:hover {
+  background-color: #555;
+}
 </style>
