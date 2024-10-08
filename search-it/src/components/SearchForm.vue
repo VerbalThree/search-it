@@ -67,9 +67,9 @@ export default {
         // Mac
         else if (userAgent.indexOf("Mac") !== -1) {
           os = "macOS";
-          const match = userAgent.match(/Mac OS X (\d+[\._]\d+)/);
+          const match = userAgent.match(/Mac OS X (\d+[\._]\d+)/); // eslint-disable-line no-useless-escape
           if (match) {
-            version = match[1].replace(/_/g, '.');
+            version = match[1];
           }
         }
 
@@ -90,7 +90,7 @@ export default {
         // iOS
         else if (userAgent.indexOf("like Mac") !== -1){
           os = "iOS";
-          const match = userAgent.match(/OS (\d+[\._]\d+)/);
+          const match = userAgent.match(/OS (\d+[\._]\d+)/); // eslint-disable-line no-useless-escape
           if (match) {
             version = match[1].replace(/_/g, '.');
           }
