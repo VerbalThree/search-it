@@ -14,7 +14,7 @@
 <!-- Operating System -->
   <nav>
     <p class="OS" v-html="$t('userOS', { os: $t('os', { os: userOS}) })"></p>
-    <p style="padding: 5px; font-size: 12px;">Bloco de Código</p>
+    <p style="padding: 5px; font-size: 12px;">2024 VerbalThree</p>
   </nav>
 
 <!-- Search Form --> 
