@@ -11,7 +11,7 @@
     <option value="jp">日本語</option>
   </select>
 
-  <p>Operating System: {{  userOS }}</p>
+  <p>{{  userOS }}</p>
 <!-- Search Form --> 
     <form action="/search" autocomplete="off" method="GET" role="search">
         <div class="user">
@@ -48,14 +48,55 @@ export default {
     detectOS() {
         const userAgent = window.navigator.userAgent;
         let os = "Unknown OS";
+        let version = "Unknown Version";
+        let architecture = "Unknown Archtecture";
 
-        if (userAgent.indexOf("Win") !== -1) os = "Windows";
-        if (userAgent.indexOf("Mac") !== -1) os = "macOS";
-        if (userAgent.indexOf("X11") !== -1 || userAgent.indexOf("Linux") !== -1) os = "Linux";
-        if (userAgent.indexOf("Android") !== -1) os = "Android";
-        if (userAgent.indexOf("like Mac") !== -1) os = "iOS";
-          
-        return os;
+        // Windows
+        if (userAgent.indexOf("Win") !== -1) {
+
+          os = "Windows";
+          if (userAgent.indexOf("Windows NT 10.0") !== -1) version = "10";
+          else if (userAgent.indexOf("Windows NT 6.3") !== -1) version = "8.1";
+          else if (userAgent.indexOf("Windows NT 6.2") !== -1) version = "8";
+          else if (userAgent.indexOf("Windows NT 6.1") !== -1) version = "7";
+          else if (userAgent.indexOf("Windows NT 6.0") !== -1) version = "Vista";
+          else if (userAgent.indexOf("Windows NT 5.1") !== -1) version = "XP";
+          architecture = userAgent.indexOf("WOW64") !== -1 ? "64 bits" : "32 bits";
+        }
+
+        // Mac
+        else if (userAgent.indexOf("Mac") !== -1) {
+          os = "macOS";
+          const match = userAgent.match(/Mac OS X (\d+[\._]\d+)/);
+          if (match) {
+            version = match[1].replace(/_/g, '.');
+          }
+        }
+
+        // Linux
+        else if (userAgent.indexOf("Linux") !== -1) {
+          os = "Linux";
+        }
+
+        // Android
+        else if (userAgent.indexOf("Android") !== -1){
+          os = "Android";
+          const match = userAgent.match(/Android (\d+\.\d+)/);
+          if (match) {
+            version = match[1];
+          }
+        }
+
+        // iOS
+        else if (userAgent.indexOf("like Mac") !== -1){
+          os = "iOS";
+          const match = userAgent.match(/OS (\d+[\._]\d+)/);
+          if (match) {
+            version = match[1].replace(/_/g, '.');
+          }
+        }
+
+        return `O seu sistema operacional é: ${os} ${version} ${architecture}`;
     }
   }
 };
