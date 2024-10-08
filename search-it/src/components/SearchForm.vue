@@ -12,7 +12,7 @@
   </select>
 
 <!-- Operating System -->
-  <p>{{ $t('userOS', { os: userOS }) }}</p>
+  <p class="OS" v-html="$t('userOS', { os: $t('os', { os: userOS}) })"></p>
 
 <!-- Search Form --> 
     <form action="/search" autocomplete="off" method="GET" role="search">

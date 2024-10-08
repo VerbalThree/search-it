@@ -7,26 +7,31 @@ import '@fortawesome/fontawesome-free/css/all.css';
 const messages = {
     en: {
         userOS: "Your Operating System is: {os}",
+        os : '<strong>{os}</strong>',
         search: "Search...",
         searchButton: "Search It!"
     },
     pt: {
         userOS: "O seu Sistema Operacional é: {os}",
+        os : '<strong>{os}</strong>',
         search: "Pesquisar...",
         searchButton: "Pesquisar Isso!"
     },
     es: {
         userOS: "Tu sistema operativo es: {os}",
+        os : '<strong>{os}</strong>',
         search: "Buscar...",
         searchButton: "¡Buscar Esto!"
     },
     fr: {
         userOS: "Votre système d'exploitation est: {os}",
+        os : '<strong>{os}</strong>',
         search: "Rechercher...",
         searchButton: "Rechercher Ça!"
     },
     jp: {
         userOS: "あなたのオペレーティングシステムは: {os}",
+        os : '<strong>{os}</strong>',
         search: "検索中...",
         searchButton: "これを検索！"
     },
